@@ -1,0 +1,836 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;200;300;400;500;600;700&display=swap');
+:root{
+    --primary-color: #1990CE;
+    --primary-font: 'Noto Sans JP', sans-serif;    
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: var(--primary-font);
+    box-sizing: border-box;
+}
+
+.home{
+    width: 100%;
+    position: relative;
+    background: #fff;
+}
+
+header{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    background: var(--primary-color);
+}
+
+header .container{
+    display: flex;
+    justify-content: space-between;
+    max-width: 1650px;
+    margin: 0 auto;
+    align-items: center;
+    padding: 15px 50px;
+}
+
+header .left a.logo{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 700;
+}
+
+header .left a.logo img{
+    width: 64px;
+    margin-right: 14px;
+}
+
+header .right{
+    align-items: center;
+    display: flex;
+}
+
+header .right a{
+    text-decoration: none;
+    color: #fff;
+    margin: 0 6px;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    padding: 12px;
+    transition: .4s;
+}
+
+header .right a:hover{
+    background: #fff;
+    color: var(--primary-color);
+}
+
+header nav{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+header ul{
+    display: flex;
+    align-items: center;
+    
+}
+
+header ul li{
+    list-style: none;
+    margin: 0 20px 0 0;
+}
+
+header ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: .4s;
+    border-bottom: 2px solid transparent;
+}
+
+header ul li a:hover{
+    border-bottom: 2px solid #fff;
+}
+
+header input{
+    padding: 12px 60px 12px 12px;
+    border-radius: 4px;
+    border: 1px solid #fff;
+    position: relative;
+    max-width: 396px;
+    width: 100%;
+    z-index: 1;
+}
+header .search{
+    position: relative;
+    z-index: 1;
+}
+header .search::after{
+    width: 22px;
+    height: 22px;
+    content: "";
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    background: url("../img/lupa.png");
+    z-index: 9;
+}
+
+main{
+    width: 100%;
+    position: relative;
+    padding-top: 180px;
+}
+
+main .container{
+    max-width: 1650px;
+    margin: 0 auto;
+    padding: 15px 50px;
+}
+
+.welcome{
+    display: flex;
+    align-items: center;
+    border: 1px solid #707070;
+    border-radius: 10px;
+    margin: 30px 0 0;
+}
+
+
+.welcome h1{
+    padding-bottom: 4px;
+    font-size: 24px;
+    margin-left: 20px;
+}
+
+
+.carousel{
+    position: relative;
+    overflow: hidden;
+    width: 100.1%;
+    padding: 50px 0 50px;
+}
+
+.carousel .slides {
+    display: flex;
+    width: 300%; /* Ancho total igual al número de slides multiplicado por 100% */
+    transition: transform 0.5s ease; /* Agrega una transición suave para el desplazamiento */
+}
+
+.carousel .slide{
+    flex: 0 0 33.33%; /* Divide igualmente el espacio para cada slide */
+    height: 350px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    border-radius: 10px;
+}
+
+.carousel .slide.active{
+    display: flex;
+}
+
+.carousel .slide .info{
+    background: url("../img/Trazado\ 34.png");
+    height: 100%;
+    position: relative;
+    width: 360px;
+    background-position-x: right;
+    background-position-y: center ;
+}
+
+.carousel .slide .info h2{
+    position: absolute;
+    transform: rotate(-40deg);
+    top: 150px;
+    left: 40px;
+    font-size: 36px;
+    color: #fff;
+}
+
+.carousel .slide img{
+    width: 440px;
+}
+
+.slide .description h3{
+    font-size: 120px;
+    color: #555C60;
+
+}
+
+.slide .description h3 span{
+    font-size: 60px;
+}
+
+.slide .description p{
+    text-align: center;
+}
+
+
+
+.carousel ul{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.carousel ul button{
+    margin: 14px 10px;
+    width: 20px;
+    height: 20px;
+    color: transparent;
+    background: #d9d9d9;
+    border: transparent;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.carousel ul button:hover{
+    transform: scale(1.1);
+    transition: .4s;
+}
+
+.carousel ul button.active{
+    background: var(--primary-color);
+}
+
+
+.about{
+    width: 100%;
+    position: relative;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.about h2{
+    color: var(--primary-color);
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+.destacados{
+    width: 100%;
+    position: relative;
+    padding: 80px 20px;
+}
+
+
+.destacados h2{
+    color: var(--primary-color);
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.destacados .container{
+    display: flex;
+    padding: 20px 0;
+    justify-content: space-between;
+}
+
+.destacados .container .card-des{
+    padding: 30px;
+    max-width: 48%;
+    border: 2px solid #999;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.destacados .container .card-des:hover{
+    transform: scale(1.06);
+    border: 2px solid var(--primary-color);
+    border-radius: 0;
+}
+
+.destacados .container .card-des h3{
+    color: var(--primary-color);
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+.destacados .container .card-des p{
+    margin-bottom: 12px;
+}
+.destacados .container .card-des .d-flex{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+.destacados .container .card-des ul{
+    padding: 0 0 0 30px;
+}
+
+.destacados .container .card-des img{
+    width: 300px;
+}
+
+
+.map{
+    position: relative;
+    width: 100%;
+}
+
+.map h2{
+    color: var(--primary-color);
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.ingreso{
+    background: #f1f1f1;
+}
+
+
+.productos{
+    width: 100%;
+    position: relative;
+    display: flex;
+    padding: 40px 0;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.card-producto{
+    border: 1px solid #e0e0e0;
+    border-radius: 30px;
+    padding: 30px;
+    min-width: 330px;
+    margin: 10px;
+    text-align: center;
+    transition: .4s;
+    cursor: pointer;
+}
+
+.card-producto:hover{
+    transform: scale(1.03);
+    border: 1px solid var(--primary-color);
+    border-radius: 0;
+}
+
+.card-producto img{
+    height: 200px;
+    margin: 0 auto 10px;
+}
+.card-producto p.precio{
+    font-size: 24px;
+    font-weight: 700;
+}
+.card-producto p{
+    text-align: left;
+}
+
+.card-producto a{
+    background: var(--primary-color);
+    color: #fff;
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    margin: 10px 0 0;
+}
+
+.detalle-producto{
+    width: 100%;
+    position: relative;
+    display: flex;
+    padding: 60px 0;
+}
+
+.detalle-producto .izq{
+    width: 50%;
+    text-align: center;
+}
+
+.detalle-producto .izq img{
+    width: 100%;
+    max-width: 560px;
+}
+
+
+.detalle-producto .der{
+    width: 50%;
+    padding-top: 20px;
+}
+
+.detalle-producto .der .promocion{
+    width: 240px;
+    background: #ebad0f;
+    text-align: center;
+    padding: 8px 0;
+    font-size: 22px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.detalle-producto .der h2{
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.detalle-producto .der h3{
+    font-size: 26px;
+    margin-bottom: 30px;
+}
+
+.detalle-producto .der p{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.detalle-producto .der .precio{
+    font-size: 26px;
+    margin-top: 30px;
+    font-weight: 700;
+}
+
+.detalle-producto .der a{
+    font-size: 20px;
+    margin-top: 30px;
+    display: block;
+    width: 260px;
+    padding: 12px 30px;
+    background: var(--primary-color);
+    color: #fff;
+    font-weight: 400;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.welcome a{
+    margin-left: auto;
+    margin-right: 30px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    background: var(--primary-color);
+    padding: 12px 30px;
+    color: #fff;
+    border-radius: 8px;
+}
+
+.welcome a img{ 
+    width: 20px;
+    margin-right: 4px;
+} 
+.descr{
+    margin-top: 40px;
+    font-size: 22px;
+}
+
+.buttons{
+    display: flex;    
+    align-items: center;
+}
+.buttons a{
+    display: flex;    
+    align-items: center;
+    justify-content: center;
+    margin: 4px 4px 0;
+}
+
+.buttons a.trash{
+    background: red;
+}
+
+.buttons a img{
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    margin-left: 4px;
+}
+
+.welcome a img{
+    margin-left: 5px;
+}
+
+footer{
+    width: 100%;
+    padding: 30px 40px;
+    color: #fff;
+    background: #545c5f;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+footer .col-25{
+    width: 25%;
+
+}
+
+footer .col-25 a img{
+    width: 80px;
+}
+footer .col-25 h3{
+    margin-bottom: 20px;
+}
+
+.registrar-producto{
+    width: 100%;
+    position: relative;
+    padding-top: 60px;
+    padding-bottom: 120px;
+}
+
+.registrar-producto .container{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.foto-producto{
+    width: 50%;
+    justify-content: center;
+    min-width: 400px;
+    text-align: center;
+}
+
+.foto-producto .campos{
+    width: 70%;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+
+ .cont-campos{
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ .campos{
+    width: 50%;
+}
+
+ .campos label{
+    display: block;
+    margin-bottom: 6px;
+}
+
+ .campos input{
+    padding: 12px;
+    margin-bottom: 12px;
+    width: 90%;
+    border: 1px solid #999;
+    border-radius: 4px;
+}
+
+.registrar-producto button{
+    padding: 12px 30px;
+    text-align: center;
+    background: var(--primary-color);
+    text-align: center;
+    min-width: 320px;
+    color: #fff;
+    border: 1px solid var(--primary-color);
+    border-radius: 6px;
+    margin-top: 20px;
+}
+
+#login{
+    width: 100%;
+    max-width: 1300px;
+    margin: 5% auto;
+    display: flex;
+}
+
+#login .left,
+#login .right{
+    width: 50%;
+}
+
+#login .left{
+    padding: 40px 65px 70px;
+    background: var(--primary-color);
+    color: #fff;
+    border-radius: 80px 0 0 0;
+    border-bottom: 12px solid #707070;
+    box-shadow: 0px 0px 5px -1px #d9d9d9
+}
+
+#login .left img{
+    width: 100px;
+}
+
+#login .left h2{
+    font-size: 60px;
+    font-weight: 500;
+}
+
+#login .left h3{
+    font-size: 40px;
+    
+}
+
+#login .left .cont-footer{
+    margin-top: 300px;
+}
+
+#login .left h4{
+    font-size: 36px;
+    font-weight: 500;
+}
+
+#login .left p{
+    font-size: 22px;
+    font-weight: 300;
+}
+
+
+#login .right{
+    padding: 40px 80px 70px;
+    background: #fff;
+    border-radius: 0 0 80px 0;
+    border-top: 12px solid #707070;
+    position: relative;
+    top: -60px;
+    box-shadow: 0px 0px 5px -1px #d9d9d9;
+}
+
+#login .right h1{
+    text-align: center;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 50px;
+}
+
+#login .right form{
+    width: 100%;
+}
+
+#login .right .group-form{
+    display: block;
+    width: 100%;
+}
+
+#login .right label{
+    display: block;
+    font-size: 21px;
+    font-weight: 600;
+}
+
+#login .right input{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #c5c5c5;
+    margin: 8px 0 12px;
+    border-radius: 10px;
+}
+
+#login .right select{
+    width: 99%;
+    padding: 12px;
+    border: 1px solid #c5c5c5;
+    margin: 8px 0 12px;
+    border-radius: 10px;
+}
+
+
+#login .right button{
+    background: #1BB0CF;
+    color: #fff;
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 7px;
+    border: transparent;
+    margin-top: 60px;
+    margin-bottom: 20px;
+}
+
+#login .right a{
+    display: block;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    color: #0A697D;
+    margin:8px 0
+}
+
+
+@media screen and (min-width: 1190px) and (max-width:1380px) {
+    #login .left h2{
+        font-size: 40px;
+    }
+    #login .left h3{
+        font-size: 30px;
+    }
+    #login .left .cont-footer{
+        margin-top: 260px;
+    }
+
+    #login .left h4{
+        font-size: 32px;
+    }
+
+    #login .right button{
+        margin-top: 30px;
+    }
+
+    #login .right h1{
+        margin-bottom: 30px;
+    }
+
+    #login .left{
+        padding: 40px;
+    }
+    #login .left img {
+        width: 80px;
+    }
+    
+    #login{
+        width: 100%;
+        max-width: 1180px;
+        margin: 6% auto;
+        display: flex;
+    }
+    #login .right {
+        padding: 40px 80px 70px;
+        background: #fff;
+        border-radius: 0 0 80px 0;
+        border-top: 12px solid #707070;
+        position: relative;
+        top: -40px;
+    }
+}
+
+
+@media screen and (min-width: 768px) and (max-width:1189px) {
+
+    
+   
+    #login .right {
+        padding: 40px 35px 50px;
+        background: #fff;
+        border-radius: 0 0 80px 0;
+        border-top: 12px solid #707070;
+        position: relative;
+        top: -40px;
+    }
+    #login .left h2 {
+        font-size: 40px;
+        font-weight: 500;
+    }
+    
+    #login .left .cont-footer {
+        margin-top: 240px;
+    }
+    #login {
+        width: 90%;
+        margin: 2% auto;
+        display: flex;
+    }
+    #login .left h3 {
+        font-size: 25px;
+    }
+
+    #login .left{
+        padding: 40px 40px 60px;
+    }
+
+}
+
+@media screen and (min-width: 320px) and (max-width:767px) {
+
+    #login{
+        width: 96%;
+        display: block;
+        margin: 8px auto;
+
+    }
+    #login .left {
+        width: 100%;
+        border-radius: 80px 0 0 0;
+        text-align: center;
+        padding: 30px 36px 50px;
+    }
+    #login .left img{
+        width: 70px;
+    }
+
+    #login .left .cont-footer {
+        margin-top: 0;
+    }
+    #login .left h2{
+        font-size: 30px;
+    }
+
+    #login .left h4{
+        font-size: 30px;
+    }
+    #login .right{
+        width: 100%;
+        border-top: 0;
+        padding: 18px 30px 30px;
+        top: -40px;
+    }
+    #login .right h1{
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+    #login .left h3{
+        font-size: 26px;
+        font-weight: 300;
+    }
+    #login .left p{
+        font-size: 14px;
+    }
+    #login .right button{
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+    #login .right label{
+        font-size: 18px;
+    }
+    
+}

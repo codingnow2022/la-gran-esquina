@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/carrito-de-supermercado.png" type="image/png">
+    <title>La Gran Esquina - Supermercado </title>
+    <link rel="stylesheet" href="css/Styles.min.css">
+</head>
+
+<body class="home">
+
+    <header>
+        <div class="container">
+            <div class="left"><a href="home-admin.html" class="logo"><img src="img/carrito-de-supermercado.png"
+                        alt="logo">Supermercado La Gran
+                    Esquina</a></div>
+            <div class="right">
+
+                <div class="botones">
+                    <a href="login.html">José Martinez</a>
+                    <a href="login.html">Cerrar Sesión</a>
+                </div>
+
+            </div>
+        </div>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><img src="img/Grupo 2.png" alt=""></li>
+                    <li><a href="home-admin.html">PRODUCTOS</a></li>
+                    <li><a href="crear-producto.html">CREAR PRODUCTO</a></li>
+                </ul>
+                <div class="search">
+                    <input type="text" placeholder="¿Qué estas buscando?">
+                </div>
+
+
+            </nav>
+        </div>
+
+    </header>
+
+    <main>
+
+        <div class="container">
+            <div class="welcome">
+                <img src="img/welcome.png" alt="Icon Bienvenida ">
+                <h1>Usuario Administrador - Crear Nuevo Producto</h1>
+                <a href="home-admin.html"> Volver al Catalogo</a>
+            </div>
+            <p class="descr">En esta vista podrás registrar nuevos productos para su tienda.</p>
+
+
+            <div class="registrar-producto">
+                <div class="container">
+
+                    <div class="foto-producto">
+                        <form action="#">
+                            <div class="campos">
+                                <label for="#">Foto Producto:</label>
+                                <input type="file" accept=".jpg, .png, .jpeg">
+                            </div>
+
+                    </div>
+
+                    <div class="cont-campos">
+                        <div class="campos">
+                            <label for="#">Código:</label>
+                            <input type="input" placeholder="Ej: abc123">
+                        </div>
+                        <div class="campos">
+                            <label for="#">Nombre:</label>
+                            <input type="input" placeholder="Ej: Arroz Diana">
+                        </div>
+                        <div class="campos">
+                            <label for="#">Descripción:</label>
+                            <input type="input" placeholder="Descripción">
+                        </div>
+                        <div class="campos">
+                            <label for="#">Precio Total:</label>
+                            <input type="input" placeholder="Ej: 48.903">
+                        </div>
+                        <div class="campos">
+                            <label for="#">Precio por Gramo:</label>
+                            <input type="input" placeholder="Ej: 4.96">
+                        </div>
+                        <div class="campos">
+                            <label for="#">Unidades Existentes:</label>
+                            <input type="input" placeholder="Ej: 87">
+                        </div>
+                        <button type="submit">Crear Producto</button>
+                    </div>
+
+
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+    <footer>
+        <div class="col-25">
+            <a href="index.html"><img src="img/carrito-de-supermercado.png" alt=""></a>
+        </div>
+        <div class="col-25">
+            <h3>NOSOTROS</h3>
+            <p>Historia</p>
+            <p>Misión y Visión</p>
+        </div>
+        <div class="col-25">
+            <h3>TIENDA ONLINE</h3>
+            <p>Consulta los productos.</p>
+            <p>Realiza tus pedidos.</p>
+        </div>
+
+        <div class="col-25">
+            <h3>CONTÁCTANOS</h3>
+            <p>3212334455</p>
+            <p>lagranesquina@gmail.com</p>
+        </div>
+
+    </footer>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const paginators = document.querySelectorAll('.paginators button');
+        const slideContainer = document.querySelector('.slides');
+        let currentIndex = 0;
+
+        // Función para mostrar un slide específico
+        function showSlide(index) {
+            // Calcula el desplazamiento necesario para mostrar el slide indicado
+            const slideWidth = slides[0].clientWidth;
+            const displacement = -index * slideWidth;
+            slideContainer.style.transform = `translateX(${displacement}px)`;
+
+            // Actualiza la clase 'active' en los paginators
+            paginators.forEach((paginator, i) => {
+                if (i === index) {
+                    paginator.classList.add('active');
+                } else {
+                    paginator.classList.remove('active');
+                }
+            });
+        }
+
+        // Agregar eventos de clic a los paginators
+        paginators.forEach((paginator, index) => {
+            paginator.addEventListener('click', () => {
+                currentIndex = index;
+                showSlide(currentIndex);
+            });
+        });
+
+        // Función para mostrar el próximo slide
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % slides.length;
+            showSlide(currentIndex);
+        }
+
+        // Cambiar de slide cada cierto intervalo (por ejemplo, cada 3 segundos)
+        setInterval(nextSlide, 5000);
+
+        // Mostrar el primer slide al cargar la página
+        showSlide(currentIndex);
+
+    </script>
+    <script src="js/Main.js"></script>
+</body>
+
+</html>
